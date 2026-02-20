@@ -1,4 +1,7 @@
 openai
 langchain
+langchain-core
+langchain_community
+langchain_groq
 python-dotenv
 groq
