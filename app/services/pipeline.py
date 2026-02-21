@@ -1,9 +1,9 @@
 import os
 import re
 from dotenv import load_dotenv
-from transcription import TranscriptionService
-from summarization import SummarizationService
-from sources import ResourceService
+from app.services.transcription import TranscriptionService
+from app.services.summarization import SummarizationService
+from app.services.sources import ResourceService
 
 load_dotenv()
 
@@ -46,10 +46,10 @@ class AudioLensPipeline:
             line = re.sub(r"\*\*(.*?)\*\*", r"\1", line).strip()
             if ":" in line:
                 line = line.split(":")[0].strip()
-            if line and not line.endswith(":"):  # 👈 skip header lines
+            if line and not line.endswith(":"):  
                 topics.append(line)
 
-        return topics[:5]  # cap at 5 topics max
+        return topics[:5] 
 
     def run(self, audio_file_path: str) -> dict:
         print("\n🎙️ Step 1: Transcribing audio...")

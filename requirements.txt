@@ -5,3 +5,8 @@ langchain_community
 langchain_groq
 python-dotenv
 groq
+pydantic-settings
+supabase
+fastapi
+uvicorn
+python-multipart
